@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<ADD_ROSPEC xmlns="http://www.llrp.org/ltk/schema/core/encoding/xml/1.0"
+	xmlns:llrp="http://www.llrp.org/ltk/schema/core/encoding/xml/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Impinj="http://developer.impinj.com/ltk/schema/encoding/xml/1.14"
+	xsi:schemaLocation="http://www.llrp.org/ltk/schema/core/encoding/xml/1.0 http://www.llrp.org/ltk/schema/core/encoding/xml/1.0/llrp.xsd http://developer.impinj.com/ltk/schema/encoding/xml/1.14 http://developer.impinj.com/ltk/schema/encoding/xml/1.14/impinj.xsd"
+	MessageID="0">
+	<ROSpec>
+		<ROSpecID>12345</ROSpecID>
+		<Priority>0</Priority>
+		<CurrentState>Disabled</CurrentState>
+		<ROBoundarySpec>
+			<ROSpecStartTrigger>
+				<ROSpecStartTriggerType>Null</ROSpecStartTriggerType>
+			</ROSpecStartTrigger>
+			<ROSpecStopTrigger>
+				<ROSpecStopTriggerType>Null</ROSpecStopTriggerType>
+				<DurationTriggerValue>0</DurationTriggerValue>
+			</ROSpecStopTrigger>
+		</ROBoundarySpec>
+		<AISpec>
+			<AntennaIDs>2</AntennaIDs>
+			<AISpecStopTrigger>
+				<AISpecStopTriggerType>Null</AISpecStopTriggerType>
+				<DurationTrigger>0</DurationTrigger>
+			</AISpecStopTrigger>
+			<llrp:InventoryParameterSpec>
+				<llrp:InventoryParameterSpecID>1234</llrp:InventoryParameterSpecID>
+				<llrp:ProtocolID>EPCGlobalClass1Gen2</llrp:ProtocolID>
+				<llrp:AntennaConfiguration>
+					<llrp:AntennaID>0</llrp:AntennaID>
+					<llrp:RFTransmitter>
+						<llrp:HopTableID>0</llrp:HopTableID>
+						<llrp:ChannelIndex>1</llrp:ChannelIndex>
+						<!--public static final int POWER91 = 91; -->
+						<!-- public static final int POWER87 = 87; -->
+						<!-- public static final int POWER61 = 61; -->
+						<!-- public static final int POWER41 = 41; -->
+						<!-- public static final int POWER35 = 35; -->
+						<llrp:TransmitPower>87</llrp:TransmitPower>
+					</llrp:RFTransmitter>
+					<llrp:C1G2InventoryCommand>
+						<llrp:TagInventoryStateAware>0</llrp:TagInventoryStateAware>
+						<llrp:C1G2RFControl>
+							<llrp:ModeIndex>0</llrp:ModeIndex>
+							<llrp:Tari>0</llrp:Tari>
+						</llrp:C1G2RFControl>
+						<llrp:C1G2SingulationControl>
+							<llrp:Session>2</llrp:Session>
+							<llrp:TagPopulation>32</llrp:TagPopulation>
+							<llrp:TagTransitTime>0</llrp:TagTransitTime>
+						</llrp:C1G2SingulationControl>
+					</llrp:C1G2InventoryCommand>
+				</llrp:AntennaConfiguration>
+			</llrp:InventoryParameterSpec>
+		</AISpec>
+	</ROSpec>
+</ADD_ROSPEC>

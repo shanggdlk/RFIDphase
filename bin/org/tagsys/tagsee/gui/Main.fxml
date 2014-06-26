@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="1100.0" styleClass="background" xmlns:fx="http://javafx.com/fxml" fx:controller="org.tagsys.tagsee.gui.MainController">
+  <children>
+    <ImageView id="app-logo" fitHeight="141.00010681152344" fitWidth="140.99989318847656" layoutX="10.0" layoutY="-5.0">
+      <image>
+        <Image url="@panda.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <Hyperlink fx:id="moreInfoLink" onAction="#processMoreInfo" text="TagSee" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0" />
+    <HBox id="hBox1" alignment="CENTER" prefHeight="25.0" prefWidth="418.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="30.0">
+      <children>
+        <Label id="label3" fx:id="errorMessage" text="TagSee - The universal RFID testbed tools" />
+      </children>
+    </HBox>
+    <AnchorPane id="anchorPane2" styleClass="top-segment" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+      <children>
+        <Text layoutX="72.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reader IP" />
+        <TextField id="lengthText" fx:id="ipText" layoutX="72.0" layoutY="105.0" prefWidth="182.0" />
+        <Text layoutX="72.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time for collecting data" />
+        <TextField id="pText" fx:id="timeText" editable="true" layoutX="72.0" layoutY="180.0" prefWidth="182.0" />
+        <Text layoutX="72.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency list (KHZ)" />
+        <Text layoutX="360.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a tag" />
+        <Text layoutX="360.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data detail" />
+        <Text layoutX="360.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annalyse result" />
+        <ListView fx:id="freqList" layoutX="72.0" layoutY="263.0" prefHeight="243.0" prefWidth="182.0" />
+        <ComboBox fx:id="epcCombo" layoutX="374.0" layoutY="71.0" onAction="#processItemChanged" prefHeight="31.0" prefWidth="364.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="椤�1" />
+              <String fx:value="椤�2" />
+              <String fx:value="椤�3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TableView fx:id="dataTable" layoutX="374.0" layoutY="162.0" prefHeight="154.0" prefWidth="654.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="116.0" text="ChannelIndex" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="127.0" text="Doppler Shift" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="128.0" text="Wave Phase" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="114.0" text="RSSI" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="190.0" text="TimeStamp" />
+          </columns>
+        </TableView>
+        <TableView fx:id="resultTable" layoutX="374.0" layoutY="376.0" prefHeight="130.0" prefWidth="654.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="228.0" text="Channel Frequency(KHZ)" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="220.0" text="Average Phase" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="202.0" text="Data Count" />
+          </columns>
+        </TableView>
+        <Label layoutX="805.0" layoutY="40.0" text="Export data directory" />
+        <TextField fx:id="directoryText" layoutX="805.0" layoutY="67.0" prefHeight="35.0" prefWidth="223.0" />
+      </children>
+    </AnchorPane>
+    <HBox id="HBox" alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+      <children>
+        <Button fx:id="collectButton" defaultButton="false" maxHeight="2.147483647E9" onAction="#processCollecteData" prefHeight="30.0" prefWidth="150.0" text="Collect data" HBox.hgrow="ALWAYS" />
+        <Button fx:id="annalyseButton" defaultButton="true" maxHeight="2.147483647E9" onAction="#processAnnalyse" prefHeight="30.0" prefWidth="150.0" text="Annalyse" HBox.hgrow="ALWAYS" />
+        <Button mnemonicParsing="false" onAction="#processExportData" text="Export Data" />
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@Main.css" />
+  </stylesheets>
+</AnchorPane>
